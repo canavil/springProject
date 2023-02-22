@@ -20,7 +20,7 @@
 	<td>
 	
 		<form method="POST">
-			<p>로그인 ID : <input type="text" name="userid"/> PASSWORD : <input type="text" name="passwd"/> <input type="submit" value="로그인" /></p>
+			<p>로그인 ID : <input type="text" name="userid"/> PASSWORD  : <input type="text" name="passwd"/> <input type="submit" value="로그인" /></p>
 		</form>
 			
 	</td>
