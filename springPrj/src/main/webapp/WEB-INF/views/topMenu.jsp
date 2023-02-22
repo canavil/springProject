@@ -2,6 +2,18 @@
     pageEncoding="UTF-8"%>
 
 
-  <tr>
-    <th class="tg-0pky">MENU : [<a href="/index">HOME</a>] [회원가입] [<a href="/create">책관리</a>] [게시판2] </th>
-  </tr>
+
+<table width="100%" border="0">
+<tr>
+	<td>
+		[<a href="/index">HOME</a>]
+	</td>
+	<td align="right">
+	<form></form>
+	로그인 ID  : <input type="text" name="userid"/> PASSWORD  : <input type="text" name="passwd"/> <input type="submit" value="로그인" />
+	</form>
+	
+ [<a href="/joinStep1"> 회원가입</a>]
+	</td>
+</tr>	
+</table>		
