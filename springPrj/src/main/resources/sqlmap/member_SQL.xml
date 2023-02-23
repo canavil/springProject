@@ -3,7 +3,7 @@
 <mapper namespace="member">
 
 	<!-- insert query -->
-	<insert id="memberSave" parameterType="hashMap" useGeneratedKeys="true">  
+	<insert id="insertMember" parameterType="hashMap" useGeneratedKeys="true">  
 	    <![CDATA[
 	    insert into tbmember
 	    (userid, korname, passwd, useYN) 
@@ -15,7 +15,7 @@
 
 
 	<!-- memberView -->
-	<select id="memberView" parameterType="hashMap" resultType="hashMap">  
+	<select id="findMemberId" parameterType="hashMap" resultType="hashMap">  
 		 <![CDATA[
 			SELECT
 		         korname, userid, passwd,rdate 
@@ -26,7 +26,7 @@
 	</select>
 	
 	<!-- memberExist -->
-	<select id="memberIdCheck" parameterType="hashMap" resultType="int">  
+	<select id="findMemberIdCheck" parameterType="hashMap" resultType="int">  
 		 <![CDATA[
 			SELECT
 		         COUNT(userid) 'idchk'
