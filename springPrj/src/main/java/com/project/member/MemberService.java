@@ -9,7 +9,8 @@ public interface MemberService {
 	String addMember(Map<String, Object> map);
 	
 	int findMemberId(Map<String, Object> map);
-
+	
+	int findMemberLogin(Map<String, Object> map);
 	/*
 	 * String create(Map<String, Object> map);
 	 * 

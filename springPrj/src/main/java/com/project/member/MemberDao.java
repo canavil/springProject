@@ -21,5 +21,10 @@ public class MemberDao {
 	public int selectMemberId(Map<String, Object> map) {
 		  return this.sqlSessionTemplate.selectOne("member.findMemberIdCheck", map);
 	}	
+	
+	//id 로그인
+	public int selectMemberLogin(Map<String, Object> map) {
+		  return this.sqlSessionTemplate.selectOne("member.findMemberLogin", map);
+	}		
 
 }

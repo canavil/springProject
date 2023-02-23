@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -24,6 +25,7 @@ public class MemberServiceImpl implements MemberService {
 	    return null;	
 	}
 	
+	//ID 등록 여부 확인
 	@Override 
 	public int findMemberId(Map<String, Object> map) { 
 		
@@ -34,6 +36,18 @@ public class MemberServiceImpl implements MemberService {
 	    return affectRowCount;	
 	}	
 	
+	//회원 로그인
+	@Override 
+	public int findMemberLogin(Map<String, Object> map) { 
+		
+		int affectRowCount = this.memberDao.selectMemberLogin(map); 
+		
+		System.out.println("========>" + map.get("userid").toString());
+		
+
+
+	    return affectRowCount;	
+	}		
 	
 	
 	

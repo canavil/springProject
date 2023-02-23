@@ -36,4 +36,16 @@
 		 ]]>
 	</select>	
 	
+	
+	<!-- memberExist -->
+	<select id="findMemberLogin" parameterType="hashMap" resultType="int">  
+		 <![CDATA[
+			SELECT
+		         COUNT(userid) 'idchk'
+		 	  FROM TBMEMBER
+		 	  WHERE
+		        userid = #{userid}
+		        AND passwd = #{passwd} 
+		 ]]>
+	</select>		
 </mapper>

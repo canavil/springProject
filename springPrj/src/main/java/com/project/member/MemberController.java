@@ -88,4 +88,25 @@ public class MemberController {
 			return 1;	//등록된 아이디 있음			
 		}
 	}	
+	
+	//아이디 로그인
+	@RequestMapping(value="/memberLogin", method = RequestMethod.POST)
+	public ModelAndView memberLogin(@RequestParam Map<String, Object> map) {
+	
+		ModelAndView mav = new ModelAndView();
+		
+		// id 중복 확인
+		int affectRowCount = this.memberService.findMemberId(map);
+
+		if (affectRowCount == 0) {
+			mav.setViewName("/index");	//기존 아이디 없음
+			
+		} else {
+			mav.setViewName("/main");	//등록된 아이디 있음			
+		}
+		
+		return mav;
+		
+		
+	}		
 }
