@@ -42,7 +42,8 @@ public class MemberServiceImpl implements MemberService {
 		
 		int affectRowCount = this.memberDao.selectMemberLogin(map); 
 		
-		System.out.println("========>" + map.get("userid").toString());
+		System.out.println("===1=====>" + map.get("userid").toString());
+		System.out.println("===2=====>" + map.get("passwd").toString());		
 		
 
 

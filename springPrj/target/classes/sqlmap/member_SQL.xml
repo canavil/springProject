@@ -37,15 +37,14 @@
 	</select>	
 	
 	
-	<!-- memberExist -->
+	<!-- member Login -->
 	<select id="findMemberLogin" parameterType="hashMap" resultType="int">  
 		 <![CDATA[
 			SELECT
-		         COUNT(userid) 'idchk'
+		         COUNT(userid) 'loginChk'
 		 	  FROM TBMEMBER
 		 	  WHERE
-		        userid = #{userid}
-		        AND passwd = #{passwd} 
+		        userid = #{userid} AND passwd = #{passwd} 
 		 ]]>
 	</select>		
 </mapper>
