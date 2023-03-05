@@ -45,7 +45,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">회원리스트</h3>
+                <h3 class="card-title">회원리스트--${sessionUserid}</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -112,7 +112,7 @@
 		<!-- /.card-body -->
 		<div class="card-footer">
 		
-            <button type="submit" class="btn btn-info">MemberAdd</button>		
+            <button type="button" class="btn btn-info" onclick="location.href='memberAdmAdd';">MemberAdd</button>		
 			<button type="button" class="btn btn-default float-right" onclick="location.href='memberAdmList';">List</button>
 		</div>
 

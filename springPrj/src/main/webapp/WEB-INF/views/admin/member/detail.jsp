@@ -82,8 +82,8 @@
 				
 				                <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-info">Save</button>
-                  <button type="button" class="btn btn-default float-right" onclick="location.href='memberAdmList';">List</button>
+                  <button type="submit" class="btn btn-info  float-right">Save</button>
+                  <button type="button" class="btn btn-default float-left" onclick="location.href='memberAdmList';">List</button>
                 </div>
            
               </form>
