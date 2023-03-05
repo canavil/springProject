@@ -11,7 +11,18 @@ public interface MemberService {
 	int findMemberId(Map<String, Object> map);
 	
 	int findMemberLogin(Map<String, Object> map);
-	/*
+
+	List<Map<String, Object>> listMemberAdm (Map<String, Object> map);
+	
+	List<Map<String, Object>> detailMemberAdm (Map<String, Object> map);
+	
+	
+	
+	
+	
+	
+	//List<Map<String, Object>> ㅊ (Map<String, Object> map);  
+		/*
 	 * String create(Map<String, Object> map);
 	 * 
 	 * Map<String, Object> detail(Map<String, Object> map);

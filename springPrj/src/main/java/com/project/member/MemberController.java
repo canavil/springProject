@@ -1,6 +1,7 @@
 package com.project.member;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,12 +59,10 @@ public class MemberController {
 		    }else {
 		        mav.setViewName("redirect:/memberDetail?userId=" + userid); 
 		    }  
-
 	    }
 	    		
 	    return mav;
 	}		
-	
 	
 	//회원정보조회
 	@RequestMapping(value="/memberDetail", method = RequestMethod.GET)
@@ -99,7 +98,7 @@ public class MemberController {
 		// id 중복 확인
 		int affectRowCount = this.memberService.findMemberLogin(map);
 
-		System.out.println("id affectRowCount=============");		
+		System.out.println("id affectRowCount=============" + affectRowCount);		
 		System.out.println(map);
 		
 		if (affectRowCount == 0) {
@@ -108,7 +107,49 @@ public class MemberController {
 		} else {
 			return 1;	//등록된 아이디 있음			
 		}
+	}
+	
+	//로그인 성공후 이동
+	@RequestMapping(value="/memberMain", method = RequestMethod.GET)
+	public ModelAndView memberMain() {
+	    return new ModelAndView("main");
+	}	
+	
+	
+
+	
+	//관리자 회원 리스트
+	@RequestMapping(value="/memberAdmList", method = RequestMethod.GET)
+	public ModelAndView memberAdmList(@RequestParam Map<String, Object> map) {
+	    
+		List<Map<String, Object>> list = this.memberService.listMemberAdm(map);  
+
+		ModelAndView mav = new ModelAndView();
 		
+		mav.addObject("data", list);
+		
+		mav.setViewName("admin/member/list");  
+	
+		return mav;  
 		
 	}		
+
+	//관리자 회원 정보 조회
+	@RequestMapping(value="/memberAdmDetail", method = RequestMethod.GET)
+	public ModelAndView memberAdmDetail(@RequestParam Map<String, Object> map) {
+	    
+		List<Map<String, Object>> list = this.memberService.detailMemberAdm(map);  
+
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("data", list);
+		
+		mav.setViewName("admin/member/detail");  
+	
+		return mav;  
+		
+	}	
+
+
+
 }

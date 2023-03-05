@@ -46,5 +46,28 @@
 		 	  WHERE
 		        userid = #{userid} AND passwd = #{passwd} 
 		 ]]>
+	</select>	
+	
+	
+	<!-- member admin list  -->
+	<select id="findMemberAdmList" parameterType="hashMap" resultType="hashMap">  
+		 <![CDATA[
+			SELECT
+		        *
+		 	  FROM TBMEMBER
+		 ]]>
 	</select>		
+	
+	<!-- member admin list  -->
+	<select id="findMemberAdmDetail" parameterType="hashMap" resultType="hashMap">  
+		 <![CDATA[
+			SELECT
+		        *
+		 	  FROM TBMEMBER
+		 	  WHERE
+		        userid = #{userid}		 	  
+		 ]]>
+	</select>		
+	
+		
 </mapper>

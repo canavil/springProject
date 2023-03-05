@@ -45,12 +45,21 @@ public class MemberServiceImpl implements MemberService {
 		System.out.println("===1=====>" + map.get("userid").toString());
 		System.out.println("===2=====>" + map.get("passwd").toString());		
 		
-
-
 	    return affectRowCount;	
 	}		
 	
+	//관리자용 회원리스트
+	@Override 
+	public List<Map<String, Object>> listMemberAdm(Map<String, Object> map){  
+		return this.memberDao.selectMemberAdmList(map);  
+	}  	
+		
 	
+	//관리자용 회원 view
+	@Override 
+	public List<Map<String, Object>> detailMemberAdm(Map<String, Object> map){  
+		return this.memberDao.selectMemberAdmDetail(map);  
+	}  		
 	
 	/*
 	 * @Override public String create(Map<String, Object> map) { int affectRowCount
