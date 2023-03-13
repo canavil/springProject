@@ -109,7 +109,7 @@ public class MemberController {
 		// id 중복 확인
 		int affectRowCount = this.memberService.findMemberLogin(map);
 
-		System.out.println("id affectRowCount==========ㅇㅇㅇㅇㅇㅇㅇTES modifyTdddd===" + affectRowCount);		
+		System.out.println("id affectRowCount==========auto build test===" + affectRowCount);		
 		System.out.println(map);
 		
 		if (affectRowCount == 0) {
