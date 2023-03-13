@@ -87,7 +87,6 @@ public class MemberController {
 	@ResponseBody
 	public int memberIdCheck(@RequestParam Map<String, Object> map) {
 	
-		Map<String, Object> mapRes = new HashMap<>();
 		
 		// id 중복 확인
 		int affectRowCount = this.memberService.findMemberId(map);
