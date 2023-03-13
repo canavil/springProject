@@ -3,7 +3,7 @@
  
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
+    <a href="/memberMain" class="brand-link">
       <img src="/resources/dist/img/AdminLTELogo.png"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
@@ -23,6 +23,12 @@
               <p>회원관리</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/freeboard" class="nav-link">
+              <i class="nav-icon fa fa-th"></i>
+              <p>자유게시판</p>
+            </a>
+          </li>          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
