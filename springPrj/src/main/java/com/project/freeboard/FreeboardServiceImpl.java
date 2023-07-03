@@ -7,20 +7,45 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.project.book.BookDao;
+
 
 @Service
 public class FreeboardServiceImpl implements FreeboardService {
 	@Autowired
-	//FreeboardDao freeboarddao;
+	FreeboardDao freeboardDao;
 	
 
-
+	//자유게시판 리스트
 	@Override
 	public List<Map<String, Object>> listFreeboard(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return this.freeboardDao.selectList(map);  
+				
 	}
 
+	
+	//자유게시판 저장
+	 @Override 
+	 public String create(Map<String, Object> map) { 
+		 int affectRowCount	 = this.freeboardDao.insertBoard(map); 
+		 
+		 if (affectRowCount == 1) { 
+			 //return  map.get("seqno").toString(); 
+		 } 
+		 
+		 return null; 
+	 }
+	  
+	 
+	//자유게시판 View
+	@Override 
+	public List<Map<String, Object>> viewFreeboard(Map<String, Object> map){  
+		
+		this.freeboardDao.updateViewCount(map); 
+		
+		return this.freeboardDao.viewFreeboard(map);  
+	}  			 
 	
 	/*
 	 * @Override public String create(Map<String, Object> map) { int affectRowCount

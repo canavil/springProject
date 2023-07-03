@@ -9,7 +9,10 @@ public interface FreeboardService {
 	
 	
 	List<Map<String, Object>> listFreeboard (Map<String, Object> map);
-
+	
+	String create(Map<String, Object> map);
+	
+	List<Map<String, Object>> viewFreeboard (Map<String, Object> map);	
 	
 /*
  * 

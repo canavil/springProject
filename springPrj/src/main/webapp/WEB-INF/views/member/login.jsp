@@ -25,6 +25,9 @@
 	<script src="/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- AdminLTE App -->
 	<script src="/resources/dist/js/adminlte.min.js"></script>
+	
+	<!--  kakao Login -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
 <script>
 	//ID 중복확인
@@ -71,6 +74,27 @@
 			});
 		}
 	
+		//카카오 로그인
+		function kakaoLogin() {
+			Kakao.Auth.login({
+				success: function (response) {
+				Kakao.API.request({
+					url: '/v2/user/me',
+					success: function (response) {
+						kakaoLoginPro(response)
+					},
+					fail: function (error) {
+						console.log(error)
+					},
+				})
+			},
+				fail: function (error) {
+					console.log(error)
+				},
+			})			
+			
+			
+		}
 	
 </script>			  
   
@@ -117,12 +141,12 @@
           </div>
           <!-- /.col -->
         </div>
-      </form>
+      
 
       <div class="social-auth-links text-center mb-3">
         <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+        <a href="#" onclick="javascript:kakaoLogin();" class="btn btn-block btn-primary">
+          <i class="fab fa-facebook mr-2"></i> Kakao Login
         </a>
         <a href="#" class="btn btn-block btn-danger">
           <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
@@ -137,6 +161,7 @@
         <a href="register.html" class="text-center">Register a new membership</a>
       </p>
     </div>
+    </form>
     <!-- /.login-card-body -->
   </div>
 </div>

@@ -34,8 +34,6 @@ function formChk() {
   <%@include file="/WEB-INF/views/include/sidebar.jsp" %>
   
   
-  <form id="frm" method="POST" action="/freeboardSave"  onsubmit="return formChk();">
-  <input type="hidden" name="admYn" value="Y">
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -53,34 +51,41 @@ function formChk() {
   <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-10">
+          <div class="col-md-6">
             <!-- general form elements -->
             <div class="card card-secondary">
               <div class="card-header">
-                <h3 class="card-title">공지사항 등록</h3>
+                <h3 class="card-title">자유게시판 VIEW</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start --> 
               <form>
                 <div class="card-body">
-                 
+                 <c:forEach var="row" items="${data}" >  
                   <div class="form-group">
-                    <label for="exampleInputPassword1">공지 제목</label>
-                    <input type="text" class="form-control" name="subject"  id="subject" placeholder="Enter subject">
+                    <label for="exampleInputPassword1">제목</label>
+                    ${row.subject}
                   </div>  
-                
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">이름</label>
+                    ${row.username} (${row.userid})
+                  </div>                    
+              <div class="form-group">
+                    <label for="exampleInputPassword1">등록일</label>
+                    ${row.regdate}
+                  </div>                    
 		            <div class="form-group">
-		              <textarea name="content" rows="5" cols="105"></textarea>
+		              <textarea name="content" rows="5" cols="105">${row.content}</textarea>
 		            </div>					
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
 
-                  <button type="button" class="btn btn-default float-left" onclick="location.href='freeboard';">List</button>
+                  <button type="button" class="btn btn-default float-left" onclick="location.href='/freeboard/list';">List</button>
                   <button type="submit" class="btn btn-info  float-right">Save</button>                  
                 </div>
-           
+           		</c:forEach> 
               </form>
             </div>
             <!-- /.card -->

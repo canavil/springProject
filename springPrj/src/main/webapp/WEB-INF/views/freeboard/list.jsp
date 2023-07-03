@@ -24,7 +24,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>자유게시판</h1>
+            <h1>수강신청</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -45,7 +45,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">자유게시판</h3>
+                <h3 class="card-title">2023-1학기 수강신청</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -63,49 +63,110 @@
               <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                   <thead>
-                    <tr>
+                    <tr align="center">
                       <th>No</th>                    
-                      <th>제목</th>
-                      <th>이름</th>
-                      <th>아이디</th>
-                      <th>파일첨부</th>
-                      <th>등록일</th>
+                      <th>수강신청</th>
+                      <th>교과목명</th>
+                      <th>과목코드</th>
+                      <th>이수구분</th>
+                      <th>학점</th>
+                      <th>담당교수</th>
+                      <th>인원제한</th>
+                      <th>수강인원</th>                      
                     </tr>
                   </thead>
                   <tbody>
                   
-                  <tr>
-                      <td>1</td> 					
-                      <td>2</td>
-                       <td>2</td>
-                        <td>2</td>
-                      <td>2</td>
-                      <td>2</td>
+                  
+                  <tr align="center">
+                      <td>1</td>                  
+                      <td><button type="button" class="btn btn-info float-center" onclick="alert('컴퓨터 보안 수강신청이 완료되었습니.')">신청</button></td> 					
+                      <td>컴퓨터 보안</td>
+                      <td>410005</td>
+                      <td>전필</td>
+                      <td>3</td>
+                      <td>노흥식</td>
+                      <td>40</td>
+                      <td>34</td>
                     </tr>
                   
-<!--           
+                  <tr align="center">
+                      <td>2</td>                  
+                      <td><button type="button" class="btn btn-info float-center" onclick="location.href='/freeboard/list';">신청</button></td> 					
+                      <td>네트워크 개론</td>
+                      <td>410015</td>
+                      <td>전필</td>
+                      <td>3</td>
+                      <td>유제광</td>
+                      <td>40</td>
+                      <td>4</td>
+                    </tr>       
+                  <tr align="center">
+                      <td>3</td>                  
+                      <td><button type="button" class="btn btn-info float-center" onclick="location.href='/freeboard/list';">신청</button></td> 					
+                      <td>클라우드</td>
+                      <td>410215</td>
+                      <td>전필</td>
+                      <td>3</td>
+                      <td>윤회진</td>
+                      <td>40</td>
+                      <td>14</td>
+                    </tr>  
+                     <tr align="center">
+                      <td>3</td>                  
+                      <td><button type="button" class="btn btn-info float-center" onclick="location.href='/freeboard/list';">신청</button></td> 					
+                      <td>자바 프로그래밍</td>
+                      <td>410245</td>
+                      <td>전필</td>
+                      <td>3</td>
+                      <td>김전호</td>
+                      <td>40</td>
+                      <td>29</td>
+                    </tr>  
+                     <tr align="center">
+                      <td>4</td>                  
+                      <td><button type="button" class="btn btn-info float-center" onclick="location.href='/freeboard/list';">신청</button></td> 					
+                      <td>node.js 프로그래밍</td>
+                      <td>410345</td>
+                      <td>전선</td>
+                      <td>3</td>
+                      <td>김필호</td>
+                      <td>40</td>
+                      <td>1</td>
+                    </tr>    
+                                                           <tr align="center">
+                      <td>5</td>                  
+                      <td><button type="button" class="btn btn-info float-center" onclick="location.href='/freeboard/list';">신청</button></td> 					
+                      <td>정보시스템 감리</td>
+                      <td>410349</td>
+                      <td>전선</td>
+                      <td>3</td>
+                      <td>이택현</td>
+                      <td>40</td>
+                      <td>15</td>
+                    </tr>
+                               
+<!-- 
+          
 					<c:forEach var="row" items="${data}" varStatus="i">  
 
  					<tr>
                       <td>${i.count } </td> 					
-                      <td><a href="/memberAdmDetail?userid=${row.userid}">${row.userid}</a></td>
-                      <td>${row.korname}</td>
-                      <td>${row.passwd}</td>
-                      <td>${row.useYN}</td>
-                      <td>${row.rdate}</td>
+                      <td><a href="/freeboard/view?seqno=${row.seqno}">${row.subject}</a></td>
+                      <td>${row.username}</td>
+                      <td>${row.userid}</td>
+                      <td>${row.filename}</td>
+                      <td>${row.regdate}</td>
                     </tr>
-                    	</c:forEach>     
- -->        
- 
-<!-- 
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
- -->
+                    
+                    
+                    </c:forEach>     
+     
+  -->
+
+
+
+
 				              
                   
                    
@@ -123,9 +184,7 @@
         
 		<!-- /.card-body -->
 		<div class="card-footer">
-		
-            <button type="button" class="btn btn-info" onclick="location.href='freeboardAdd';">게시물 등록</button>		
-			<button type="button" class="btn btn-default float-right" onclick="location.href='freeboard';">목록</button>
+			<button type="button" class="btn btn-default float-right" onclick="location.href='/freeboard/list';">목록</button>
 		</div>
 
  

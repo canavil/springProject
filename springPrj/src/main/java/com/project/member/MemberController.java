@@ -133,7 +133,7 @@ public class MemberController {
 	
 	
 	//로그인 화면
-	@RequestMapping(value="/memberLogin", method = RequestMethod.GET)
+	@RequestMapping(value="/Login", method = RequestMethod.GET)
 	public ModelAndView memberLogin() {
 	    return new ModelAndView("member/login");
 	}		

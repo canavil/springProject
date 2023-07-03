@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="freeboard">
+
+	<!-- insert query -->
+	<insert id="insertBoard" parameterType="hashMap" useGeneratedKeys="true">  
+	    <![CDATA[
+	    insert into tbfreeboard
+	    (username, userid, subject, content, filename, filepath, hot, hit) 
+	    values
+	    ('aa','aaa', #{subject}, #{content}, '', '', '',0)
+	    ]]>
+	</insert>
+
+	<!-- select query -->
+	<select id="listBoard" parameterType="hashMap" resultType="hashMap">   
+	     <![CDATA[
+			select * from tbfreeboard
+		 ]]>
+	</select>		
+		
+	<!-- select query -->
+	<select id="viewBoard" parameterType="hashMap" resultType="hashMap">   
+	     <![CDATA[
+			select * from tbfreeboard where seqno = #{seqno}
+		 ]]>
+	</select>		
+			
+			
+	<!-- insert query -->
+	<update id="updateHit" parameterType="hashMap" useGeneratedKeys="true">  
+	    <![CDATA[
+	    update tbfreeboard SET hit=hit+1 where seqno= #{seqno}
+	    ]]>
+	</update>			
+			
+		
+</mapper>

@@ -22,12 +22,11 @@ public class FreeboardController {
 
 	@Autowired
 	FreeboardService freeboardService;
-	private Object request;	
-	
+
 	
 	
 	//게시판 리스트
-	@RequestMapping(value="/freeboard", method = RequestMethod.GET)
+	@RequestMapping(value="/freeboard/list", method = RequestMethod.GET)
 	public ModelAndView freeboardList(@RequestParam Map<String, Object> map) {
 	    
 		List<Map<String, Object>> list = this.freeboardService.listFreeboard(map);  
@@ -41,18 +40,48 @@ public class FreeboardController {
 		return mav;  	
 	}		
 	
+	
+	
 	//자유게시판 등록 폼
-	@RequestMapping(value="/freeboardAdd", method = RequestMethod.GET)
-	public ModelAndView memberAdmAdd() {
+	@RequestMapping(value="/freeboard/register", method = RequestMethod.GET)
+	public ModelAndView freeboardAdd() {
 	    return new ModelAndView("freeboard/register");  
 	}
 	
 	
 	//자유게시판 저장
-//	@RequestMapping(value="/freeboardSave", method = RequestMethod.GET)
-//	public ModelAndView memberAdmAdd(@RequestParam Map<String, Object> map) {
-//	    //return new ModelAndView("freeboard/register");  
-//	}		
+	@RequestMapping(value="/freebord/register", method = RequestMethod.POST)
+	public ModelAndView freeboardSave(@RequestParam Map<String, Object> map) {
+	    
+		ModelAndView mav = new ModelAndView();
+		String result = this.freeboardService.create(map);
+
+        mav.setViewName("redirect:/freeboard/list"); 
+
+        return mav;
+		
+	}		
+	
+	
+	
+
+	
+	
+	//자유게시판 조회
+	@RequestMapping(value="/freeboard/view", method = RequestMethod.GET)
+	public ModelAndView freeeboadView(@RequestParam Map<String, Object> map) {
+	    
+		List<Map<String, Object>> list = this.freeboardService.viewFreeboard(map);  
+
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("data", list);
+		
+		mav.setViewName("freeboard/view");  
+	
+		return mav;  
+		
+	}	
 	
 /*	
 	//동의
